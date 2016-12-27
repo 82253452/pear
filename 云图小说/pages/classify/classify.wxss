@@ -1,0 +1,16 @@
+.classify{
+    font-family: "kindle5";
+    font-size:14pt;
+
+    background-size:cover;
+}
+.classify .list{
+   width:40%;
+   float:left;
+   margin-left:54rpx;
+   height:150rpx;
+   background: url("../assets/img/class_1.jpg") no-repeat;
+   margin-top:30rpx;
+   text-align:center;
+   line-height:150rpx;
+}

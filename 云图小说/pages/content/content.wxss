@@ -1,0 +1,11 @@
+/* pages/content/content.wxss */
+@import "/wxParse/wxParse.wxss";
+.content{
+    font-family: "kindle5";
+    font-size:14pt;
+    background: url("../assets/img/bookBg.jpg") no-repeat;
+    background-size:cover;
+}
+.content_head{
+    text-align: center;
+}

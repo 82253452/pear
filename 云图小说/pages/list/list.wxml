@@ -1,0 +1,5 @@
+<view class="container root">
+    <block wx:for="{{datas}}" wx:for-item="data">
+        <view class="item"  data-bookId ="{{data.bookId}}" data-cid = "{{data.cid}}" bindtap="clickShowContent">{{data.name}}</view>
+    </block>
+</view>

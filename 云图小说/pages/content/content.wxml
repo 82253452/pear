@@ -1,0 +1,8 @@
+<!--<view>{{content}}</view>-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="content">
+    <scroll-view scroll-y="true" style="height: 1230rpx;margin-bottom:20px;"bindscrolltolower="loadNext">
+        <view class = "content_head">{{cname}}</view>
+        <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+    </scroll-view>
+</view>

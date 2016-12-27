@@ -1,0 +1,5 @@
+<view class="classify">
+    <block wx:for="{{typeList}}" wx:for-item="data">
+        <view class="list" bindtap="getList" data-id ="{{data.id}}">{{data.name}}</view>
+    </block>
+</view>
