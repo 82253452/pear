@@ -4,7 +4,8 @@
     "pages/list/list",
     "pages/content/content",
     "pages/logs/logs",
-    "pages/classify/classify"
+    "pages/classify/classify",
+    "pages/bookshelf/bookshelf"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -27,6 +28,11 @@
                 "iconPath":"pages/assets/img/tab1b.png",
                 "selectedIconPath":"pages/assets/img/tab1a.png",
                 "text":"分类"
+            },{
+                "pagePath":"pages/bookshelf/bookshelf",
+                "iconPath":"pages/assets/img/tab1b.png",
+                "selectedIconPath":"pages/assets/img/tab1a.png",
+                "text":"书架"
             },{
                 "pagePath":"pages/about/about",
                 "iconPath":"pages/assets/img/tab2a.png",

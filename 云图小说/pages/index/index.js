@@ -1,32 +1,54 @@
 var bookService = require('../../service/showApiService.js')
 var util = require('../../utils/util.js')
+var app = getApp()
 Page({
-  data:{
+  data: {
     // text:"这是一个页面"
-    datas:[]
+    datas: []
   },
-  onLoad:function(options){
-    var that  = this
-    console.info(options)
-     bookService.getBookList(function(data){
-        that.setData({
-          datas:data
-        })
-     })
+  onLoad: function (options) {
+
   },
-  onReady:function(){
+  onReady: function () {
     // 页面渲染完成
   },
-  onShow:function(){
+  onShow: function () {
     // 页面显示
+    this.loadBook()
   },
-  onHide:function(){
+  onHide: function () {
     // 页面隐藏
   },
-  onUnload:function(){
+  onUnload: function () {
     // 页面关闭
-  },clickShowList:function(event){
-    console.log(event.target.id);
-    wx.navigateTo({url:"../list/list?bookId="+event.target.id});
+  },
+  clickShowList: function (event) {
+    util.addStorageBook(this.data.datas[event.target.dataset.index])
+    wx.navigateTo({ url: "../list/list?bookId=" + event.target.id })
+  },
+  loadBook: function () {
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 10000
+    })
+    var that = this
+    var typeId = app.globalData.typeId
+    var keyword = app.globalData.keyword
+    var page = app.globalData.page
+    app.globalData.page = page + 1
+    bookService.getBookList(keyword, typeId, page, function (data) {
+      var datas = that.data.datas.concat(data)
+      that.setData({
+        datas: datas
+      })
+      wx.hideToast()
+    })
+  },
+  test: function (e) {
+    console.info("test");
+  },
+  loadMor: function (e) {
+    this.loadBook()
   }
 })

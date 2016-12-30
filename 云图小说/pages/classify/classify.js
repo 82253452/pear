@@ -1,4 +1,5 @@
 var service = require('../../service/showApiService.js')
+var app = getApp()
 Page({
     data:{
         typeList:[
@@ -60,7 +61,11 @@ Page({
         // 页面关闭
     },getList:function (opt) {
         var id = opt.target.dataset.id;
-        console.info(id);
-        wx.redirectTo({url:"../index/index?bookId=1"});
+        app.globalData.typeId=id
+        app.globalData.page=0
+        // wx.redirectTo({url:"../index/index?bookId=1"});
+        wx.switchTab({
+         url: '../index/index'
+        })
     }
 })

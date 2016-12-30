@@ -44,7 +44,6 @@ Page({
   onUnload:function(){
     // 页面关闭
   },clickShowContent:function(event){
-    console.info(event)
      wx.navigateTo({url:"../content/content?bookId="+event.target.dataset.bookid+"&cid="+event.target.dataset.cid});
   }
 })

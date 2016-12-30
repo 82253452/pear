@@ -5,12 +5,25 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    try {
+      var value = wx.getStorageSync('book')
+      if (!value) {
+        // Do something with return value
+        try {
+          console.info('setBook  null')
+          wx.setStorageSync('book', {})
+        } catch (e) {
+        }
+      }
+    } catch (e) {
+      // Do something when catch error
+    }
   },
-  getUserInfo:function(cb){
+  getUserInfo: function (cb) {
     var that = this
-    if(this.globalData.userInfo){
+    if (this.globalData.userInfo) {
       typeof cb == "function" && cb(this.globalData.userInfo)
-    }else{
+    } else {
       //调用登录接口
       wx.login({
         success: function () {
@@ -24,8 +37,11 @@ App({
       })
     }
   },
-  globalData:{
-    userInfo:null,
-    datas : null
+  globalData: {
+    userInfo: null,
+    datas: null,
+    typeId: '',
+    keyword: '',
+    page: 1
   }
 })
