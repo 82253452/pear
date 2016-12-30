@@ -5,12 +5,13 @@
     "pages/content/content",
     "pages/logs/logs",
     "pages/classify/classify",
-    "pages/bookshelf/bookshelf"
+    "pages/bookshelf/bookshelf",
+    "pages/about/about"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "云图小说阅读器",
+    "navigationBarTitleText": "免费全本小说网",
     "navigationBarTextStyle":"black"
   },
     "tabBar":{
@@ -35,7 +36,7 @@
                 "text":"书架"
             },{
                 "pagePath":"pages/about/about",
-                "iconPath":"pages/assets/img/tab2a.png",
+                "iconPath":"pages/assets/img/tab1b.png",
                 "selectedIconPath":"pages/assets/img/tab2b.png",
                 "text":"关于"
             }]

@@ -1,0 +1,12 @@
+<view>
+    <block wx:for="{{books}}" wx:for-item="book" wx:key="id" wx:for-index="index">
+        <view class="book">
+            <image src="../assets/img/nocover.jpg/" class="book-img" bindtap ="getBook" data-index="{{index}}"></image>
+            <view class="book-name book-weight">{{book.title}}</view>
+            <view wx:if="{{!!book.newChapter}}" class="book-name book-small">{{book.newChapter}}</view>
+            <view class="book-name book-small" wx:else>无最新章节</view>
+            <view wx:if="{{!!book.prevConetentName}}" class="book-name book-small">{{book.prevConetentName}}</view>
+            <view class="book-name book-small" wx:else>未读</view>
+        </view>
+    </block>
+</view>

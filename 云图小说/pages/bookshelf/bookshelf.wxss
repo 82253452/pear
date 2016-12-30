@@ -1,1 +1,25 @@
 /* pages/bookshelf/bookshelf.wxss */
+.book{
+    width:100%;
+    float:left;
+    height:200rpx;
+    padding-left:30rpx;
+}
+.book-img{
+    width:150rpx;
+    height:180rpx;
+    float:left;
+}
+.book-name{
+    width:70%;
+    height:60rpx;
+    float:left;
+    margin-left:30rpx;
+}
+.book-small{
+    font-size:25rpx;
+    color:#ABABAB;
+}
+.book-weight{
+    font-weight:bold;
+}

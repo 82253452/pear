@@ -1,47 +1,47 @@
 //app.js
 App({
-  onLaunch: function () {
-    //调用API从本地缓存中获取数据
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-    try {
-      var value = wx.getStorageSync('book')
-      if (!value) {
-        // Do something with return value
+    onLaunch: function () {
+        //调用API从本地缓存中获取数据
+        var logs = wx.getStorageSync('logs') || []
+        logs.unshift(Date.now())
+        wx.setStorageSync('logs', logs)
         try {
-          console.info('setBook  null')
-          wx.setStorageSync('book', {})
-        } catch (e) {
-        }
-      }
-    } catch (e) {
-      // Do something when catch error
-    }
-  },
-  getUserInfo: function (cb) {
-    var that = this
-    if (this.globalData.userInfo) {
-      typeof cb == "function" && cb(this.globalData.userInfo)
-    } else {
-      //调用登录接口
-      wx.login({
-        success: function () {
-          wx.getUserInfo({
-            success: function (res) {
-              that.globalData.userInfo = res.userInfo
-              typeof cb == "function" && cb(that.globalData.userInfo)
+            var value = wx.getStorageSync('book')
+            if (!value) {
+                // Do something with return value
+                try {
+                    console.info('setBook  null')
+                    wx.setStorageSync('book', {})
+                } catch (e) {
+                }
             }
-          })
+        } catch (e) {
+            // Do something when catch error
         }
-      })
+    },
+    getUserInfo: function (cb) {
+        var that = this
+        if (this.globalData.userInfo) {
+            typeof cb == "function" && cb(this.globalData.userInfo)
+        } else {
+            //调用登录接口
+            wx.login({
+                success: function () {
+                    wx.getUserInfo({
+                        success: function (res) {
+                            that.globalData.userInfo = res.userInfo
+                            typeof cb == "function" && cb(that.globalData.userInfo)
+                        }
+                    })
+                }
+            })
+        }
+    },
+    globalData: {
+        userInfo: null,
+        datas: null,
+        typeId: '',
+        keyword: '',
+        page: 1
     }
-  },
-  globalData: {
-    userInfo: null,
-    datas: null,
-    typeId: '',
-    keyword: '',
-    page: 1
-  }
 })
